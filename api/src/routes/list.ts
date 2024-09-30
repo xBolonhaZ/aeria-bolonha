@@ -9,26 +9,26 @@ listRouter.GET('/checkins', async (context) => {
   }
 
   // Realiza a busca de check-ins com base no CPF/CNPJ
-  const { error:PersonError, result: Person } = await context.collections.person.functions.get({
-    filters: { document:document }  // Supondo que o documento está na coleção Person
+  const { error:personError, result: person } = await context.collections.person.functions.get({
+    filters: { document:document }  // Supondo que o documento está na coleção person
   });
-  if (PersonError) {
+  if (personError) {
     return context.error(HTTPStatus.NotFound,{code:ACError.ResourceNotFound});
   }
 
-  const { error:AnimalError, result: Animal } = await context.collections.animal.functions.get({
-    filters: { owner:Person._id  }  // Supondo que o documento está na coleção Person
+  const { error:animalError, result: animal } = await context.collections.animal.functions.get({
+    filters: { owner:person._id  }  // Supondo que o documento está na coleção person
   });
 
-  if (AnimalError) {
+  if (animalError) {
     return context.error(HTTPStatus.NotFound,{code:ACError.ResourceNotFound});
   }
 
-  const { error:DocError, result: checkins } = await context.collections.checkin.functions.getAll({
-    filters: { animal:Animal._id  }  // Supondo que o documento está na coleção Person
+  const { error:docError, result: checkins } = await context.collections.checkin.functions.getAll({
+    filters: { animal:animal._id  }  // Supondo que o documento está na coleção person
   });
 
-  if (DocError) {
+  if (docError) {
     return context.error(HTTPStatus.NotFound,{code:ACError.ResourceNotFound});
   }
 

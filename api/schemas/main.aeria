@@ -9,7 +9,7 @@ collection User extends aeria.user {
   }
 }
 
-collection Geolocation {
+collection geolocation {
 
   properties {
     country str
@@ -31,7 +31,7 @@ collection Geolocation {
   }
 }
 
-collection Person {
+collection person {
       properties {
       name str
       document str @mask(["###.###.###-##"])
@@ -39,7 +39,7 @@ collection Person {
       phone str @mask(["(##) #####-####"])
       type enum @values(["customer"])
       ie int
-      adress Geolocation @inline
+      adress geolocation @inline
     }
   presets {
     crud
@@ -52,10 +52,10 @@ collection Person {
   }
 }
 
-collection Animal {
+collection animal {
   properties {
     name str
-    owner Person
+    owner person
     age num
     type enum @values(["dog", "priquito", "cat"])
   }
@@ -70,9 +70,9 @@ collection Animal {
   }
 }
 
-collection Checkin {
+collection checkin {
   properties{
-    animal Animal
+    animal animal
     weight int
     temperature int
     type enum @values (["Routine","Emergency"])
