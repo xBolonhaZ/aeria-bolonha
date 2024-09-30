@@ -46,6 +46,7 @@ declare type MirrorDescriptions = {
         "isTimestamp": true
       }
     },
+    "icon": "paw-print",
     "presets": [
       "crud"
     ],
@@ -121,6 +122,7 @@ declare type MirrorDescriptions = {
         "isTimestamp": true
       }
     },
+    "icon": "calendar-check",
     "presets": [
       "crud"
     ],
@@ -277,6 +279,7 @@ declare type MirrorDescriptions = {
         "isTimestamp": true
       }
     },
+    "icon": "globe",
     "presets": [
       "crud"
     ],
@@ -361,6 +364,7 @@ declare type MirrorDescriptions = {
         "isTimestamp": true
       }
     },
+    "icon": "user-circle",
     "presets": [
       "crud"
     ],

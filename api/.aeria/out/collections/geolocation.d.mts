@@ -1,5 +1,5 @@
 import { Collection,SchemaWithId,ExtendCollection,Context,get,getAll,insert,remove } from "aeria"
-export declare type geolocationCollection = {description: {$id: "geolocation",properties: {country: {type: "string"},state: {type: "string"},district: {type: "string"},street: {type: "string"},number: {type: "string"},complement: {type: "string"},zipcode: {type: "string",mask: ["##.###-###"]}},presets: ["crud"]},functions: {get: typeof get,getAll: typeof getAll,insert: typeof insert,remove: typeof remove},exposedFunctions: {get: true,getAll: true,insert: true,remove: true}}
+export declare type geolocationCollection = {description: {$id: "geolocation",properties: {country: {type: "string"},state: {type: "string"},district: {type: "string"},street: {type: "string"},number: {type: "string"},complement: {type: "string"},zipcode: {type: "string",mask: ["##.###-###"]}},icon: "globe",presets: ["crud"]},functions: {get: typeof get,getAll: typeof getAll,insert: typeof insert,remove: typeof remove},exposedFunctions: {get: true,getAll: true,insert: true,remove: true}}
 export declare const geolocation: geolocationCollection & {item: SchemaWithId<geolocationCollection["description"]>}
 export declare type geolocation = SchemaWithId<typeof geolocation.description>
 export declare const extendgeolocationCollection: <

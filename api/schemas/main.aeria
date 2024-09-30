@@ -10,7 +10,7 @@ collection User extends aeria.user {
 }
 
 collection geolocation {
-
+icon "globe"
   properties {
     country str
     state str
@@ -32,6 +32,7 @@ collection geolocation {
 }
 
 collection person {
+  icon "user-circle"
       properties {
       name str
       document str @mask(["###.###.###-##"])
@@ -53,6 +54,7 @@ collection person {
 }
 
 collection animal {
+  icon "paw-print"
   properties {
     name str
     owner person
@@ -71,6 +73,7 @@ collection animal {
 }
 
 collection checkin {
+  icon "calendar-check"
   properties{
     animal animal
     weight int

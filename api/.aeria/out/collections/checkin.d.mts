@@ -1,5 +1,5 @@
 import { Collection,SchemaWithId,ExtendCollection,Context,get,getAll,insert,remove } from "aeria"
-export declare type checkinCollection = {description: {$id: "checkin",properties: {animal: {$ref: "animal"},weight: {type: "integer"},temperature: {type: "integer"},type: {enum: ["Routine","Emergency"]},reason: {type: "string"}},presets: ["crud"]},functions: {get: typeof get,getAll: typeof getAll,insert: typeof insert,remove: typeof remove},exposedFunctions: {get: true,getAll: true,insert: true,remove: true}}
+export declare type checkinCollection = {description: {$id: "checkin",properties: {animal: {$ref: "animal"},weight: {type: "integer"},temperature: {type: "integer"},type: {enum: ["Routine","Emergency"]},reason: {type: "string"}},icon: "calendar-check",presets: ["crud"]},functions: {get: typeof get,getAll: typeof getAll,insert: typeof insert,remove: typeof remove},exposedFunctions: {get: true,getAll: true,insert: true,remove: true}}
 export declare const checkin: checkinCollection & {item: SchemaWithId<checkinCollection["description"]>}
 export declare type checkin = SchemaWithId<typeof checkin.description>
 export declare const extendcheckinCollection: <
