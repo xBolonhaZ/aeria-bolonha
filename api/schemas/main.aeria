@@ -9,7 +9,7 @@ collection User extends aeria.user {
   }
 }
 
-collection geolocation {
+collection Geolocation {
 icon "globe"
   properties {
     country str
@@ -31,7 +31,7 @@ icon "globe"
   }
 }
 
-collection person {
+collection Person {
   icon "user-circle"
       properties {
       name str
@@ -40,7 +40,7 @@ collection person {
       phone str @mask(["(##) #####-####"])
       type enum @values(["customer"])
       ie int
-      adress geolocation @inline
+      adress Geolocation @inline
     }
   presets {
     crud
@@ -53,11 +53,11 @@ collection person {
   }
 }
 
-collection animal {
+collection Animal {
   icon "paw-print"
   properties {
     name str
-    owner person
+    owner Person
     age num
     type enum @values(["dog", "priquito", "cat"])
   }
@@ -72,10 +72,10 @@ collection animal {
   }
 }
 
-collection checkin {
+collection Checkin {
   icon "calendar-check"
   properties{
-    animal animal
+    animal Animal
     weight int
     temperature int
     type enum @values (["Routine","Emergency"])
