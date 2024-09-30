@@ -1,0 +1,90 @@
+collection File extends aeria.file {}
+collection TempFile extends aeria.tempFile {}
+collection User extends aeria.user {
+  properties {
+    roles []enum @values([
+      "root",
+      "customer"
+    ])
+  }
+}
+
+collection Geolocation {
+
+  properties {
+    country str
+    state str
+    district str
+    street str
+    number str
+    complement str
+    zipcode str @mask(["##.###-###"])
+  }
+  presets {
+    crud
+  }
+  functions {
+    get @expose
+    getAll @expose
+    insert @expose
+    remove @expose
+  }
+}
+
+collection Person {
+      properties {
+      name str
+      document str @mask(["###.###.###-##"])
+      email str
+      phone str @mask(["(##) #####-####"])
+      type enum @values(["customer"])
+      ie int
+      adress Geolocation @inline
+    }
+  presets {
+    crud
+  }
+  functions {
+    get @expose
+    getAll @expose
+    insert @expose
+    remove @expose
+  }
+}
+
+collection Animal {
+  properties {
+    name str
+    owner Person
+    age num
+    type enum @values(["dog", "priquito", "cat"])
+  }
+  presets {
+    crud
+  }
+  functions {
+    get @expose
+    getAll @expose
+    insert @expose
+    remove @expose
+  }
+}
+
+collection Checkin {
+  properties{
+    animal Animal
+    weight int
+    temperature int
+    type enum @values (["Routine","Emergency"])
+    reason str
+  }
+  presets{
+    crud
+  }
+  functions{
+    get @expose
+    getAll @expose 
+    insert @expose
+    remove @expose
+  }
+}
